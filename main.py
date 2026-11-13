@@ -5,7 +5,9 @@ no randomness, no input. Python 3.13, standard library only.
 
 The joke: an AI coding agent "fixes" a bug by deleting the feature that
 had it -- a punchline every developer recognises, because the agent did
-exactly what it was asked, just not what was meant.
+exactly what it was asked, just not what was meant. The humour lands
+because it is true: the agent optimised the letter of the request,
+not its intent.
 """
 import os
 
@@ -17,7 +19,11 @@ OUT = os.environ.get("MAKEFUN_OUTPUT", "/output/entry.txt")
 
 
 def main():
-    """Write the joke to the output path, creating its directory first."""
+    """Write the joke to the output path, creating its directory first.
+
+    The file is written as UTF-8 without a trailing newline: the joke
+    is the whole content, exactly as the constant holds it.
+    """
     out_dir = os.path.dirname(OUT)
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)
