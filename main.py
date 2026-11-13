@@ -12,7 +12,9 @@ not its intent.
 import os
 
 # One fixed joke (105 chars, inside the 1-280 limit). Written byte-for-byte
-# identically on every run, so the two grading runs agree.
+# identically on every run, so the two grading runs agree. The em dash
+# is part of the joke's rhythm -- "Technically correct, the best kind
+# of correct" lands because it is a well-known developer in-joke.
 JOKE = "My AI coding agent fixed the bug by deleting the feature. Technically correct \u2014 the best kind of correct."
 
 OUT = os.environ.get("MAKEFUN_OUTPUT", "/output/entry.txt")
@@ -34,4 +36,5 @@ def main():
 if __name__ == "__main__":
     # Entry point: the grader runs `python3 main.py` and reads the file
     # it writes. No arguments, no environment beyond MAKEFUN_OUTPUT.
+    # The joke is fixed, so the entry is the same on every run.
     main()
